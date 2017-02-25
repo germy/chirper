@@ -5,7 +5,7 @@ class Ability
     unless user 
       can :read, Message
       can :index, Message
-
+      can :read, User
 
       #cannot :index, ShiftJob      
     else
@@ -16,9 +16,6 @@ class Ability
 
           can :create, Message
 
-          can :read, User do |e|
-            e.id == user.id
-          end
       end
     end
 

@@ -13,3 +13,121 @@
  *= require_tree .
  *= require_self
  */
+
+
+body{
+  background-color: #AA1C2C;
+   font-family: "Trebuchet MS", Helvetica, sans-serif;
+  margin:0;
+  padding:0;
+}
+
+img{
+  max-width:400px;
+  display: inline;
+  padding: 10px;
+}
+
+h3{
+  font-size: 1.1em;
+  margin: 2px 0px 7px 0px;
+  display:inline;
+}
+
+table{
+  margin: auto;
+}
+
+a.hover{
+  text-decoration: underline;
+}
+
+a:active, a:visited, a, a:link{
+  text-decoration: none;
+  color: inherit;
+  background:inherit;
+}
+
+
+
+.full{
+  max-width: 100%;
+  max-height: 100%;
+  display:block;
+  margin: auto;
+}
+
+.left{
+  float:left;
+  text-align: left;
+}
+
+.right{
+  float:right;
+  text-align: right;
+}
+
+#header{
+  margin:0;
+  padding: 0;
+}
+
+#wrapper{
+  max-width: 800px;
+
+  margin: auto;
+
+  margin-top: 20px;
+}
+
+.content{
+  margin: 20px 0px 20px 0px;
+
+  padding:10px 20px 10px 20px;
+  border-radius: 25px;
+  background-color: #fff;    
+}
+
+.profile-pic{
+  max-width: 150px;
+  max-height: 150px;
+}
+
+#nav{
+  width: 100%;
+  color: #fff;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 1.1em;
+  padding: 10px 0px 15px 0px;
+  font-weight: 700;
+  min-height: 30px;
+  background-color: #71131d;
+  line-height: 36px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.nav-item{
+  cursor: pointer;
+  padding:;
+  padding:0px 30px 0px 30px;
+}
+
+#logo{
+  font-size: 1.3em;
+}
+
+#footer{
+  border-top: 1px solid #333;
+  color: #333;
+  display: flex;
+  -webkit-justify-content: space-around; 
+  justify-content: space-around; 
+  margin: 30px 10px 0px 10px;
+  padding: 15px 0px 15px 0px;
+
+}
+
+#notice{
+  color:#fff;
+}

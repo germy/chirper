@@ -1,0 +1,21 @@
+
+    <% @messages.each do |message| %>
+      <div class="content">
+
+        <h3><%= message.message %></h3>
+        <hr>
+        <%= link_to message.user.name.capitalize, user_path(message.user) %> - 
+        <%= message.updated_at.strftime("%m/%d/%Y") %>
+     
+
+        <div class="right">
+          <% if can? :edit, message %>
+            <%= link_to 'Edit', edit_message_path(message) %>
+          <% end %>
+          <% if can? :destroy, message %>
+            <%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+      </div>
+
+    <% end %>

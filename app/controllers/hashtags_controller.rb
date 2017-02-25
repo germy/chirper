@@ -10,6 +10,8 @@ class HashtagsController < ApplicationController
   # GET /hashtags/1
   # GET /hashtags/1.json
   def show
+    @m = MessageHashtag.where("hashtag_id = ?", params[:id])
+    @messages = @m.map{|i| i.message}
   end
 
   # GET /hashtags/new

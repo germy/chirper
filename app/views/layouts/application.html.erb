@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Chirp</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Chirp - We Can Hear You</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>    
+  </head>
+  
+  <body>
+    <div id="header">
+
+      <div id="nav">
+        <div class="nav-item left" id="logo"><%= link_to 'CHIRP', '/' %></div>
 
 
-<% if current_user %>
-  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
-<% else %>
-  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-<% end %>
+        <div class="nav-item right">
+          <% if current_user %>
+            <%= link_to current_user.name.capitalize, user_path(current_user) %> | <%= link_to "Logout", '/logout' %>
+          <% else %>
+            <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+          <% end %>
+        </div>
 
-<%= yield %>
+        <div class="nav-item right">
+          <% if can? :create, Message %>
+            <%= link_to 'Post', new_message_path %>
+          <% end %>
+        </div>
 
-</body>
+      </div>
+    </div>    
+
+    <div id="wrapper">
+      <p id="notice"><%= notice %></p>
+      <%= yield %>
+
+      <div id="footer">
+        <div class="footer-item">
+          Jeremy Lee &copy 2017
+        </div>      
+        <div class="footer-item">
+          Chirper - We Can Hear You
+        </div>      
+        <div class="footer-item">
+          <a href="mailto:jalee@cmu.edu">jalee@cmu.edu</a>
+        </div>        
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,9 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="content">  
+  <h3>Results for: <%= @hashtag.name %></h3>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @hashtag.name %>
-</p>
 
-<%= link_to 'Edit', edit_hashtag_path(@hashtag) %> |
-<%= link_to 'Back', hashtags_path %>
+<%= render :partial => 'messages/list' %>
+    
+
+
+
+

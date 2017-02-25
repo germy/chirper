@@ -7,13 +7,8 @@ has_many :hash_tags, through: :message_hashtags
 after_save :add_hashtags
 after_destroy :remove_hashtags
 
-private
 
-  def remove_hashtags
-    MessageHashtag.where("message_id = ?", self.id).each do |m|
-      m.destroy
-    end
-  end
+private
 
   def add_hashtags
     remove_hashtags
@@ -35,5 +30,12 @@ private
       end
     end
   end
+
+  def remove_hashtags
+    MessageHashtag.where("message_id = ?", self.id).each do |m|
+      m.destroy
+    end
+  end
+  
 
 end

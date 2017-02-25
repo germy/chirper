@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @message_hashtag.message_id %>
+</p>
+
+<p>
+  <strong>Hash:</strong>
+  <%= @message_hashtag.hash_id %>
+</p>
+
+<%= link_to 'Edit', edit_message_hashtag_path(@message_hashtag) %> |
+<%= link_to 'Back', message_hashtags_path %>

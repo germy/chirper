@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Message Hashtags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th>Hash</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @message_hashtags.each do |message_hashtag| %>
+      <tr>
+        <td><%= message_hashtag.message_id %></td>
+        <td><%= message_hashtag.hash_id %></td>
+        <td><%= link_to 'Show', message_hashtag %></td>
+        <td><%= link_to 'Edit', edit_message_hashtag_path(message_hashtag) %></td>
+        <td><%= link_to 'Destroy', message_hashtag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Message hashtag', new_message_hashtag_path %>

@@ -1,0 +1,2 @@
+module MessageHashesHelper
+end

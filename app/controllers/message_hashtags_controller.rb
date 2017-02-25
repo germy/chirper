@@ -69,6 +69,6 @@ class MessageHashtagsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_hashtag_params
-      params.require(:message_hashtag).permit(:message_id, :hash_id)
+      params.require(:message_hashtag).permit(:message_id, :hashtag_id)
     end
 end

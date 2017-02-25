@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
+
   # GET /messages
   # GET /messages.json
   def index
@@ -71,4 +72,6 @@ class MessagesController < ApplicationController
     def message_params
       params.require(:message).permit(:message, :user_id)
     end
+
+
 end

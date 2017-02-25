@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20170225160634) do
 
   create_table "message_hashtags", force: :cascade do |t|
     t.integer  "message_id"
-    t.integer  "hash_id"
+    t.integer  "hashtag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

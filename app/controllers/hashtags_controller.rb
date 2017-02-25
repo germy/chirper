@@ -1,17 +1,31 @@
 class HashtagsController < ApplicationController
-  before_action :set_hashtag, only: [:show, :edit, :update, :destroy]
+  before_action :set_hashtag, only: [:edit, :update, :destroy]
 
   # GET /hashtags
   # GET /hashtags.json
   def index
     @hashtags = Hashtag.all
+
   end
 
   # GET /hashtags/1
   # GET /hashtags/1.json
   def show
-    @m = MessageHashtag.where("hashtag_id = ?", params[:id])
+    @hashtag = Hashtag.where("name = ?", "#" + params[:id]).first
+    @m = MessageHashtag.where("hashtag_id = ?", @hashtag.id)
     @messages = @m.map{|i| i.message}
+    @messages.each do |k|
+      tmp = ""
+       k.message.split(" ").each do |i|
+        if i.include? "#"
+          i[0] = ''
+          tmp = tmp + " <a href=/hashtags/" + i + ">#" + i + "</a>"
+        else
+          tmp = tmp + " " + i
+        end
+      end
+    k.message = tmp
+    end    
   end
 
   # GET /hashtags/new

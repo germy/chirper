@@ -2,7 +2,7 @@
     <% @messages.each do |message| %>
       <div class="content">
 
-        <h3><%= message.message %></h3>
+        <h3><%=raw message.message %></h3>
         <hr>
         <%= link_to message.user.name.capitalize, user_path(message.user) %> - 
         <%= message.updated_at.strftime("%m/%d/%Y") %>

@@ -5,8 +5,7 @@ class Ability
     unless user 
       can :read, Message
       can :index, Message
-      cannot :manage, MesagesHashtags
-      cannot :manage, Hashtags
+
 
       #cannot :index, ShiftJob      
     else

@@ -13,7 +13,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'pg'
-
+gem 'rails_12factor'
 gem 'cancancan'
 gem 'bcrypt', '~> 3.1.7'
 

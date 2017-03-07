@@ -16,7 +16,7 @@
 
         <div class="nav-item right">
           <% if current_user %>
-            <%= link_to current_user.name.capitalize, user_path(current_user) %> | <%= link_to "Logout", '/logout' %>
+            <%= link_to current_user.name.titleize, user_path(current_user) %> | <%= link_to "Logout", '/logout' %>
           <% else %>
             <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
           <% end %>

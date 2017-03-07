@@ -4,7 +4,7 @@
 
         <h3><%=raw message.message %></h3>
         <hr>
-        <%= link_to message.user.name.capitalize, user_path(message.user) %> - 
+        <%= link_to message.user.name.titleize, user_path(message.user) %> - 
         <%= message.updated_at.strftime("%m/%d/%Y") %>
      
 
